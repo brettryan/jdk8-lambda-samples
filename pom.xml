@@ -78,7 +78,7 @@
     Provides lambda samples for use on the JDK 8 platform.
   </description>
   <organization>
-    <name>Drunken Dev.</name>
+    <name>Drunken Dev</name>
     <url>http://drunkendev.com</url>
   </organization>
 
@@ -91,7 +91,7 @@
       <id>brettryan</id>
       <email>brett.ryan@gmail.com</email>
       <name>Brett Ryan</name>
-      <organization>Drunken Dev.</organization>
+      <organization>Drunken Dev</organization>
       <url>http://drunkendev.com/</url>
       <timezone>+10</timezone>
     </developer>
