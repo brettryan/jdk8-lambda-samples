@@ -34,16 +34,22 @@ import javax.xml.bind.annotation.XmlElement;
 public class Customer {
 
     @XmlElement(name = "id")
-    private String customerID;
+    private String customerId;
     @XmlElement(name = "name")
     private String companyName;
+    @XmlElement
     private String address;
+    @XmlElement
     private String city;
+    @XmlElement
     private String region;
     @XmlElement(name = "postalcode")
     private String postalCode;
+    @XmlElement
     private String country;
+    @XmlElement
     private String phone;
+    @XmlElement
     private String fax;
     @XmlElement(name = "orders")
     private CustomerOrders orders;
@@ -54,12 +60,12 @@ public class Customer {
     public Customer() {
     }
 
-    public String getCustomerID() {
-        return customerID;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomerID(String customerID) {
-        this.customerID = customerID;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public String getCompanyName() {
@@ -137,7 +143,7 @@ public class Customer {
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 11 * hash + Objects.hashCode(this.customerID);
+        hash = 11 * hash + Objects.hashCode(this.customerId);
         return hash;
     }
 
@@ -145,7 +151,7 @@ public class Customer {
     public boolean equals(Object obj) {
         if (obj != null && getClass() == obj.getClass()) {
             Customer other = (Customer) obj;
-            return Objects.equals(this.customerID, other.customerID);
+            return Objects.equals(this.customerId, other.customerId);
         }
         return false;
     }

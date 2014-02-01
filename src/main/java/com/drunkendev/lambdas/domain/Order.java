@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 public class Order {
 
     @XmlElement(name = "id")
-    private int orderID;
+    private int orderId;
     @XmlElement(name = "orderdate")
     @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     private LocalDateTime orderDate;
@@ -52,12 +52,12 @@ public class Order {
     public Order() {
     }
 
-    public int getOrderID() {
-        return orderID;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public LocalDateTime getOrderDate() {
@@ -79,7 +79,7 @@ public class Order {
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 17 * hash + this.orderID;
+        hash = 17 * hash + this.orderId;
         return hash;
     }
 
@@ -87,7 +87,7 @@ public class Order {
     public boolean equals(Object obj) {
         if (obj != null && getClass() == obj.getClass()) {
             Order other = (Order) obj;
-            return this.orderID == other.orderID;
+            return this.orderId == other.orderId;
         }
         return false;
     }
