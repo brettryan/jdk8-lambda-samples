@@ -18,9 +18,15 @@
 
 package com.drunkendev.lambdas.domain;
 
+import com.drunkendev.lambdas.xml.BigDecimalAdapter;
+import com.drunkendev.lambdas.xml.LocalDateTimeAdapter;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -28,12 +34,16 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author  Brett Ryan
  */
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.NONE)
 public class Order {
 
     @XmlElement(name = "id")
     private int orderID;
     @XmlElement(name = "orderdate")
+    @XmlJavaTypeAdapter(LocalDateTimeAdapter.class)
     private LocalDateTime orderDate;
+    @XmlJavaTypeAdapter(BigDecimalAdapter.class)
     private BigDecimal total;
 
     /**

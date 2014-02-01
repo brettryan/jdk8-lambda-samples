@@ -18,7 +18,11 @@
 
 package com.drunkendev.lambdas.domain;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
 
@@ -26,10 +30,12 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author  Brett Ryan
  */
+@XmlAccessorType(XmlAccessType.NONE)
 public class Customer {
 
     @XmlElement(name = "id")
     private String customerID;
+    @XmlElement(name = "name")
     private String companyName;
     private String address;
     private String city;
@@ -39,7 +45,8 @@ public class Customer {
     private String country;
     private String phone;
     private String fax;
-    private Order[] orders;
+    @XmlElement(name = "orders")
+    private CustomerOrders orders;
 
     /**
      * Creates a new {@code Customer} instance.
@@ -119,11 +126,11 @@ public class Customer {
         this.fax = fax;
     }
 
-    public Order[] getOrders() {
+    public CustomerOrders getOrders() {
         return orders;
     }
 
-    public void setOrders(Order[] orders) {
+    public void setOrders(CustomerOrders orders) {
         this.orders = orders;
     }
 
@@ -141,6 +148,21 @@ public class Customer {
             return Objects.equals(this.customerID, other.customerID);
         }
         return false;
+    }
+
+
+    public static class CustomerOrders {
+
+        @XmlElement(name = "order")
+        private List<Order> orders;
+
+        public List<Order> getOrders() {
+            if (orders == null) {
+                orders = new ArrayList<Order>();
+            }
+            return this.orders;
+        }
+
     }
 
 }

@@ -18,9 +18,13 @@
 
 package com.drunkendev.lambdas.domain;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 
 /**
@@ -126,9 +130,17 @@ public class DomainService {
 
     public List<Customer> getCustomerList() {
         if (customerList == null) {
-            throw new UnsupportedOperationException("Not yet implemented.");
+            try {
+                JAXBContext jc = JAXBContext.newInstance(CustomerList.class);
+                Unmarshaller u = jc.createUnmarshaller();
+                InputStream x = Customer.class.getResourceAsStream("Customers.xml");
+                CustomerList custs = (CustomerList) u.unmarshal(x);
+                customerList = Collections.unmodifiableList(custs.getCustomers());
+            } catch (JAXBException ex) {
+                throw new RuntimeException("Could not get customer list", ex);
+            }
         }
-        return Collections.unmodifiableList(customerList);
+        return customerList;
     }
 
 }
