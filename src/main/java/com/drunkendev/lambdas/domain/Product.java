@@ -49,11 +49,7 @@ public class Product {
     }
 
     public Product(int id, String name, String category, double unitPrice, int unitsInStock) {
-        this.productId = id;
-        this.productName = name;
-        this.category = category;
-        this.unitPrice = BigDecimal.valueOf(unitPrice);
-        this.unitsInStock = unitsInStock;
+        this(id, name, category, BigDecimal.valueOf(unitPrice), unitsInStock);
     }
 
     public int getProductId() {
