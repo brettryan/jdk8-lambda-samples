@@ -5,7 +5,7 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
   <groupId>com.drunkendev</groupId>
   <artifactId>jdk8-lambda-samples</artifactId>
@@ -15,7 +15,7 @@
   <url>https://github.com/brettryan/jdk8-lambda-samples</url>
 
   <prerequisites>
-    <maven>2.2.1</maven>
+    <maven>3.0.3</maven>
   </prerequisites>
 
   <properties>
