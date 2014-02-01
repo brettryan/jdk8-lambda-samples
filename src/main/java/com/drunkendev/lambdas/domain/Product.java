@@ -28,7 +28,7 @@ import java.math.BigDecimal;
  */
 public class Product {
 
-    private int productID;
+    private int productId;
     private String productName;
     private String category;
     private BigDecimal unitPrice;
@@ -40,12 +40,28 @@ public class Product {
     public Product() {
     }
 
-    public int getProductID() {
-        return productID;
+    public Product(int id, String name, String category, BigDecimal unitPrice, int unitsInStock) {
+        this.productId = id;
+        this.productName = name;
+        this.category = category;
+        this.unitPrice = unitPrice;
+        this.unitsInStock = unitsInStock;
     }
 
-    public void setProductID(int ProductID) {
-        this.productID = ProductID;
+    public Product(int id, String name, String category, double unitPrice, int unitsInStock) {
+        this.productId = id;
+        this.productName = name;
+        this.category = category;
+        this.unitPrice = BigDecimal.valueOf(unitPrice);
+        this.unitsInStock = unitsInStock;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -83,7 +99,7 @@ public class Product {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + this.productID;
+        hash = 53 * hash + this.productId;
         return hash;
     }
 
@@ -91,7 +107,7 @@ public class Product {
     public boolean equals(Object obj) {
         if (obj != null && getClass() == obj.getClass()) {
             Product other = (Product) obj;
-            return this.productID == other.productID;
+            return this.productId == other.productId;
         }
         return false;
     }
