@@ -56,8 +56,8 @@ public class RestrictionOperators {
      */
     public void lambda1() {
         System.out.println("\nNumbers < 5:");
-        List<Integer> numbers = Arrays.asList(5, 4, 1, 3, 9, 8, 6, 7, 2, 0);
-        numbers.stream()
+        int[] numbers = {5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+        Arrays.stream(numbers)
                 .filter(n -> n < 5)
                 .forEach(System.out::println);
     }
