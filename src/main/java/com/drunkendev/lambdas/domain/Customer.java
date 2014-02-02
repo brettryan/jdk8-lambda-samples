@@ -19,6 +19,7 @@
 package com.drunkendev.lambdas.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -138,6 +139,10 @@ public class Customer {
 
     public void setOrders(CustomerOrders orders) {
         this.orders = orders;
+    }
+
+    public List<Order> getOrderList() {
+        return orders == null ? Collections.<Order>emptyList() : orders.getOrders();
     }
 
     @Override
