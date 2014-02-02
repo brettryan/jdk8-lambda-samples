@@ -143,4 +143,85 @@ public class DomainService {
         return customerList;
     }
 
+    public int[] getNumbers() {
+        return new int[]{5, 4, 1, 3, 9, 8, 6, 7, 2, 0};
+    }
+
+    public String[] getDigitStrings() {
+        return new String[]{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    }
+
+    public String[] getWords() {
+        return new String[]{"aPPLE", "BlUeBeRrY", "cHeRry"};
+    }
+
+    public String[] getWords2() {
+        return new String[]{"believe", "relief", "receipt", "field"};
+    }
+
+    public String[] getWords3() {
+        return new String[]{"aPPLE", "AbAcUs", "bRaNcH", "BlUeBeRrY", "ClOvEr", "cHeRry"};
+    }
+
+    public String[] getWords4() {
+        return new String[]{"blueberry", "chimpanzee", "abacus", "banana", "apple", "cheese"};
+    }
+
+    public String[] getAnagrams() {
+        return new String[]{"from   ", " salt", " earn ", "  last   ", " near ", " form  "};
+    }
+
+    public List<ScoreRecord> getScoreRecords() {
+        List<ScoreRecord> r = new ArrayList<>();
+        r.add(new ScoreRecord("Bob", 40));
+        r.add(new ScoreRecord("Cathy", 45));
+        return r;
+    }
+
+    public int[] getAttemptedWithdrawals() {
+        return new int[]{20, 10, 40, 50, 10, 70, 30};
+    }
+
+    public int[] getNumbersA() {
+        return new int[]{0, 2, 4, 5, 6, 8, 9};
+    }
+
+    public int[] getNumbersB() {
+        return new int[]{1, 3, 5, 7, 8};
+    }
+
+    public int[] getLowNumbers() {
+        return new int[]{1, 11, 3, 19, 41, 65, 19};
+    }
+
+    public int[] getFactorsOf300() {
+        return new int[]{2, 2, 3, 5, 5};
+    }
+
+    public double[] getDoubles() {
+        return new double[]{1.7, 2.3, 1.9, 4.1, 2.9};
+    }
+
+    public List<Employee> getEmployees1() {
+        List<Employee> r = new ArrayList<>();
+        r.add(new Employee(1, "Jones", 5));
+        r.add(new Employee(2, "Smith", 5));
+        r.add(new Employee(2, "Smith", 5));
+        r.add(new Employee(3, "Smith", 6));
+        r.add(new Employee(4, "Arthur", 11));
+        r.add(new Employee(5, "Arthur", 12));
+        return r;
+    }
+
+    public List<Employee2> getEmployees2() {
+        List<Employee2> r = new ArrayList<>();
+        r.add(new Employee2(1, "Jones", 10));
+        r.add(new Employee2(2, "Jagger", 5));
+        r.add(new Employee2(3, "Thomas", 6));
+        r.add(new Employee2(4, "Collins", 11));
+        r.add(new Employee2(4, "Collins", 12));
+        r.add(new Employee2(5, "Arthur", 12));
+        return r;
+    }
+
 }
