@@ -53,7 +53,7 @@ public class Customer {
     @XmlElement
     private String fax;
     @XmlElement(name = "orders")
-    private CustomerOrders orders;
+    private CustomerOrders customerOrdersList;
 
     /**
      * Creates a new {@code Customer} instance.
@@ -133,16 +133,16 @@ public class Customer {
         this.fax = fax;
     }
 
-    public CustomerOrders getOrders() {
-        return orders;
+    public CustomerOrders getCustomerOrdersList() {
+        return customerOrdersList;
     }
 
-    public void setOrders(CustomerOrders orders) {
-        this.orders = orders;
+    public void setCustomerOrdersList(CustomerOrders customerOrdersList) {
+        this.customerOrdersList = customerOrdersList;
     }
 
-    public List<Order> getOrderList() {
-        return orders == null ? Collections.<Order>emptyList() : orders.getOrders();
+    public List<Order> getOrders() {
+        return customerOrdersList == null ? Collections.<Order>emptyList() : customerOrdersList.getOrders();
     }
 
     @Override

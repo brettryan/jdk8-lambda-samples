@@ -26,7 +26,6 @@ import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 
 /**
@@ -194,7 +193,7 @@ public class ProjectionOperators {
         String x;
         ds.getCustomerList().stream()
                 .forEach(c -> {
-                    c.getOrderList().stream()
+                    c.getOrders().stream()
                     .filter(o -> limit.compareTo(o.getTotal()) > 0)
                     .forEach(o -> System.out.println(String.format(
                                             "customerId=%s orderId=%d total=%s",
@@ -213,7 +212,7 @@ public class ProjectionOperators {
         LocalDateTime ldt = LocalDateTime.of(1998, 1, 1, 0, 0);
         ds.getCustomerList().stream()
                 .forEach(c -> {
-                    c.getOrderList().stream()
+                    c.getOrders().stream()
                     .filter(o -> o.getOrderDate().isAfter(ldt) || o.getOrderDate().equals(ldt))
                     .forEach(o -> System.out.println(String.format(
                                             "customerId=%s orderId=%d orderDte=%s",
@@ -233,7 +232,7 @@ public class ProjectionOperators {
         BigDecimal limit = BigDecimal.valueOf(2000);
         ds.getCustomerList().stream()
                 .forEach(c -> {
-                    c.getOrderList().stream()
+                    c.getOrders().stream()
                     .filter(o -> limit.compareTo(o.getTotal()) <= 0)
                     .forEach(o -> System.out.println(String.format(
                                             "customerId=%s orderId=%d total=%s",
@@ -252,7 +251,7 @@ public class ProjectionOperators {
         ds.getCustomerList().stream()
                 .filter(c -> "WA".equalsIgnoreCase(c.getRegion()))
                 .forEach(c -> {
-                    c.getOrderList().stream()
+                    c.getOrders().stream()
                     .filter(o -> o.getOrderDate().isAfter(cutoffDate) || o.getOrderDate().equals(cutoffDate))
                     .forEach(o -> System.out.println(String.format(
                                             "customerId=%s orderId=%d",
@@ -270,7 +269,7 @@ public class ProjectionOperators {
         ds.getCustomerList().stream()
                 .forEach(c -> {
                     i.postIncrement();
-                    c.getOrderList().stream()
+                    c.getOrders().stream()
                     .forEach(o -> System.out.println(String.format(
                                             "Customer #%d has an order with orderId=%d",
                                             i.getIndex(),

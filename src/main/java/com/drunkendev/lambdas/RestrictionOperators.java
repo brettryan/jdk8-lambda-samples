@@ -103,7 +103,7 @@ public class RestrictionOperators {
                 .filter(c -> "WA".equalsIgnoreCase(c.getRegion()))
                 .forEach(c -> {
                     System.out.println(String.format("Customer %s: %s", c.getCustomerId(), c.getCompanyName()));
-                    c.getOrders().getOrders().stream().forEach(o -> {
+                    c.getOrders().stream().forEach(o -> {
                         System.out.println(String.format(
                                         "  Order %d: %s",
                                         o.getOrderId(), o.getOrderDate().format(DateTimeFormatter.ISO_DATE)));
