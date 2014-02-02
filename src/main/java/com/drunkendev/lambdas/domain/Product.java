@@ -108,4 +108,14 @@ public class Product {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Product[productId=%d,productName=%s,category=%s,unitPrice=%s,unitsInStock=%d]",
+                             productId,
+                             productName,
+                             category,
+                             unitPrice,
+                             unitsInStock);
+    }
+
 }
